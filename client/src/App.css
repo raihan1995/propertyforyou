@@ -1,0 +1,48 @@
+.homepage-background {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ), url("./img/house.jpeg");
+  background-size: cover;
+  height: 100vh;
+  background-repeat: repeat;
+}
+
+
+/* Autocomplete CSS */
+/* .auto-complete{
+    width: 100%;
+    color: black;
+    font-size: 14px;
+    border: 1px solid black;
+}
+
+.auto-complete input{
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+    outline: none;
+} */
+
+
+.auto-complete ul{
+    text-align: left;
+}
+
+.auto-complete ul{
+    text-align: left;
+    list-style-type: none;
+    margin: 0;
+    border-top: 1px solid grey;
+    padding: 0;
+    border: 1px solid grey;
+}
+
+.auto-complete li{
+    padding: 10px 5px;
+    cursor: pointer;
+}
+.auto-complete li:hover{
+    background-color: grey;
+    color: white;
+}

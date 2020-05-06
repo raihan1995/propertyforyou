@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const { auth, setAuth } = useContext(UserContext);
+
   return (
     <nav className="navbar navbar-expand-lg  navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
@@ -35,11 +38,13 @@ const Navbar = () => {
               search
             </Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/sell">
-              sell
-            </Link>
-          </li>
+          {auth.isLoggedIn ? (
+            <li className="nav-item">
+              <Link className="nav-link" to="/sell">
+                sell
+              </Link>
+            </li>
+          ) : null}
         </ul>
       </div>
     </nav>

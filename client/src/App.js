@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import { UserContext, User } from "./context/UserContext";
 //components
 import Navbar from "./components/Navbar";
 
@@ -10,17 +10,26 @@ import Home from "./pages/Home";
 import Search from "./pages/Search";
 import SingleProperty from "./pages/SingleProperty";
 import Sell from "./pages/Sell";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
+  const [auth, setAuth] = useState({ isLoggedIn: false });
+
   return (
     <Router>
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={Home}></Route>
-        <Route exact path="/search" component={Search}></Route>
-        <Route exact path="/property/:id" component={SingleProperty}></Route>
-        <Route exact path="/sell" component={Sell}></Route>
-      </Switch>
+      <UserContext.Provider value={{ auth, setAuth }}>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home}></Route>
+          <Route exact path="/search" component={Search}></Route>
+          <Route exact path="/property/:id" component={SingleProperty}></Route>
+          <Route exact path="/login" component={Login}></Route>
+          <Route exact path="/register" component={Register}></Route>
+          <ProtectedRoute exact path="/sell" component={Sell}></ProtectedRoute>
+        </Switch>
+      </UserContext.Provider>
     </Router>
   );
 }

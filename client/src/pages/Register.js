@@ -1,11 +1,8 @@
-import React, { useState, useContext } from "react";
-import { UserContext } from "../context/UserContext";
+import React, { useState } from "react";
 
-const Login = () => {
+const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { auth, setAuth } = useContext(UserContext);
-
   const onSubmitForm = async (e) => {
     e.preventDefault();
     try {
@@ -13,13 +10,13 @@ const Login = () => {
         email,
         password,
       };
+
       console.log(requestBody);
-      const response = await fetch("http://localhost:5000/login", {
+      const response = await fetch("http://localhost:5000/user", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody),
       });
-      setAuth({ ...auth, isLoggedIn: true });
       console.log(response);
     } catch (err) {
       console.error(err);
@@ -34,7 +31,7 @@ const Login = () => {
           <input
             type="email"
             className="form-control"
-            id="email"
+            id="exampleInputEmail1"
             aria-describedby="emailHelp"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -48,7 +45,7 @@ const Login = () => {
           <input
             type="password"
             className="form-control"
-            id="password"
+            id="exampleInputPassword1"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -62,4 +59,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

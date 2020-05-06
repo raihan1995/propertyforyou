@@ -19,6 +19,12 @@ CREATE TABLE adbuy
   number VARCHAR(100) NOT NULL
 );
 
+CREATE TABLE users
+(
+  id serial PRIMARY KEY,
+  email VARCHAR(100) NOT NULL,
+  password VARCHAR(100) NOT NULL
+);
 
 CREATE TABLE adbuy
 (

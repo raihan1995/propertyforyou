@@ -9,13 +9,43 @@ app.use(express.json()); //req.body
 
 //ROUTES//
 
-//get all properties
-app.get("/property", async (req, res) => {
+//post user
+app.post("/user", async (req, res) => {
   try {
-    const allProperty = await pool.query("SELECT * FROM adbuy");
-    res.json(allProperty.rows);
-  } catch (err) {
-    console.error(err.message);
+    const { email, password } = req.body;
+    const newUser = await pool.query(
+      "INSERT INTO users(email, password) VALUES($1, $2) RETURNING *",
+      [email, password]
+    );
+    console.log(newUser.rows);
+
+    res.json(newUser.rows);
+  } catch (error) {
+    console.error(error.message);
+  }
+});
+
+//post
+app.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const response = await pool.query("SELECT * FROM users WHERE email = $1", [
+      email,
+    ]);
+    const user = response.rows[0];
+    console.log(user);
+    if (!user) {
+      res.status(404).json("This Email does not exist");
+    } else {
+      const passwordIsCorrect = password === user.password;
+      if (passwordIsCorrect) {
+        res.json(user);
+      } else {
+        res.status(404).json("Weong password");
+      }
+    }
+  } catch (error) {
+    console.error(error.message);
   }
 });
 

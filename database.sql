@@ -22,23 +22,23 @@ CREATE TABLE adbuy
 CREATE TABLE users
 (
   id serial PRIMARY KEY,
-  email VARCHAR(100) NOT NULL,
+  email VARCHAR(100) UNIQUE NOT NULL,
   password VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE adbuy
-(
-  id serial PRIMARY KEY,
-  price INT,
-  address VARCHAR(100),
-  city VARCHAR(100),
-  propertytype VARCHAR(100),
-  postcode VARCHAR(20),
-  description VARCHAR (100),
-  bedroom INT,
-  number VARCHAR(100),
-  image TEXT
-);
+-- CREATE TABLE adbuy
+-- (
+--   id serial PRIMARY KEY,
+--   price INT,
+--   address VARCHAR(100),
+--   city VARCHAR(100),
+--   propertytype VARCHAR(100),
+--   postcode VARCHAR(20),
+--   description VARCHAR (100),
+--   bedroom INT,
+--   number VARCHAR(100),
+--   image TEXT
+-- );
 
 CREATE TABLE adrent
 (

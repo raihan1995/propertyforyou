@@ -24,7 +24,8 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="container mt-5">
+      <h1>Register</h1>
       <form onSubmit={onSubmitForm}>
         <div className="form-group">
           <label for="exampleInputEmail1">Email address</label>

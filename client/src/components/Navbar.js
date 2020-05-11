@@ -35,7 +35,22 @@ const Navbar = () => {
           </li> */}
           <li className="nav-item">
             <Link className="nav-link" to="/search">
-              search
+              Buy
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/rent">
+              Rent
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/login">
+              login
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/register">
+              register
             </Link>
           </li>
           {auth.isLoggedIn ? (

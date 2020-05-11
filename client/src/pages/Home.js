@@ -22,15 +22,13 @@ const Home = () => {
               />
               <div className="card-body">
                 <h4 className="card-title">
-                  <a>Card title</a>
+                  <a>Purchase a property</a>
                 </h4>
-                <p className="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" className="btn btn-primary">
+                <p className="card-text">Start searching for a property now!</p>
+
+                <Link className="nav-link btn btn-primary" to="/search">
                   For Sale
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -44,15 +42,12 @@ const Home = () => {
               />
               <div className="card-body">
                 <h4 className="card-title">
-                  <a>Card title</a>
+                  <a>Rent a property</a>
                 </h4>
-                <p className="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" className="btn btn-primary">
+                <p className="card-text">Start searching for a property now!</p>
+                <Link className="nav-link btn btn-primary" to="/rent">
                   For Rent
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -66,13 +61,10 @@ const Home = () => {
               />
               <div className="card-body">
                 <h4 className="card-title">
-                  <a>Card title</a>
+                  <a>Sell a property</a>
                 </h4>
-                <p className="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <Link className="btn btn-primary" to="/sell">
+                <p className="card-text">List your property for sale now!</p>
+                <Link className="nav-link btn btn-primary" to="/sell">
                   Sell
                 </Link>
               </div>

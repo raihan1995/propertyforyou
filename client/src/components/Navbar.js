@@ -23,14 +23,9 @@ const Navbar = () => {
       </button>
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav">
-          <li className="nav-item active">
+          {/* <li className="nav-item active">
             <Link className="nav-link" to="/">
-              home
-            </Link>
-          </li>
-          {/* <li className="nav-item">
-            <Link className="nav-link" to="/property/4">
-              View property
+              Home
             </Link>
           </li> */}
           <li className="nav-item">
@@ -45,18 +40,18 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/login">
-              login
+              Login
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/register">
-              register
+              Register
             </Link>
           </li>
           {auth.isLoggedIn ? (
             <li className="nav-item">
               <Link className="nav-link" to="/sell">
-                sell
+                Sell
               </Link>
             </li>
           ) : null}

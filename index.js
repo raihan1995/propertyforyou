@@ -34,15 +34,15 @@ app.post("/login", async (req, res) => {
     ]);
     const user = response.rows[0];
     //console.log(user);
-    if (!user) {
-      res.status(404).json("This Email does not exist");
-    } else {
-      const passwordIsCorrect = password === user.password;
-      if (passwordIsCorrect) {
-        res.json(user);
-      } else {
-        res.status(404).json("Wrong password");
-      }
+    // if (!user) {
+    //   res.status(404).json("This Email does not exist");
+    // } else {
+    const passwordIsCorrect = password === user.password;
+    if (passwordIsCorrect) {
+      res.json(user);
+      // } else {
+      //   res.status(404).json("Wrong password");
+      // }
     }
   } catch (error) {
     console.error(error.message);

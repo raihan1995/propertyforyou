@@ -19,7 +19,9 @@ const Login = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody),
       });
-      setAuth({ ...auth, isLoggedIn: true });
+      if (response) {
+        setAuth({ ...auth, isLoggedIn: true });
+      }
       console.log(response);
     } catch (err) {
       console.error(err);
@@ -31,7 +33,7 @@ const Login = () => {
       <h1>Login</h1>
       <form onSubmit={onSubmitForm}>
         <div className="form-group">
-          <label for="exampleInputEmail1">Email address</label>
+          <label htmlFor="exampleInputEmail1">Email address</label>
           <input
             type="email"
             className="form-control"
@@ -45,7 +47,7 @@ const Login = () => {
           </small>
         </div>
         <div className="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label htmlFor="exampleInputPassword1">Password</label>
           <input
             type="password"
             className="form-control"
@@ -56,7 +58,7 @@ const Login = () => {
         </div>
 
         <button type="submit" className="btn btn-primary">
-          Submit
+          Log in
         </button>
       </form>
     </div>

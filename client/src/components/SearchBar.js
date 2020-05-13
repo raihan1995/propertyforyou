@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 const SearchBar = () => {
   const [location, setLocation] = useState("");
   const [proptype, setProptype] = useState("");
@@ -118,7 +117,7 @@ const SearchBar = () => {
             <option>200000</option>
           </select>
         </div>
-        <div className="col-6 col-md-3 col-xl-2 d-flex align-content-end flex-wrap ">
+        <div className="col-6 col-md-3 col-xl-2 d-flex align-content-end flex-wrap">
           <button className="btn btn-success" onClick={onSearchButton}>
             Search
           </button>

@@ -39,7 +39,7 @@ const Sell = () => {
   };
 
   return (
-    <div className="container-sm">
+    <div className="container">
       <div className="row">
         <div className="col-12 mt-5">
           <form onSubmit={onSubmitForm}>
@@ -56,7 +56,7 @@ const Sell = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="address">address</label>
+              <label htmlFor="address">Address</label>
               <input
                 type="text"
                 className="form-control"
@@ -68,7 +68,7 @@ const Sell = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="city">city</label>
+              <label htmlFor="city">City</label>
               {/* <input
                 type="text"
                 className="form-control"

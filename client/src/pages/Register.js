@@ -10,7 +10,6 @@ const Register = () => {
         email,
         password,
       };
-
       console.log(requestBody);
       const response = await fetch("http://localhost:5000/user", {
         method: "POST",
@@ -28,7 +27,7 @@ const Register = () => {
       <h1>Register</h1>
       <form onSubmit={onSubmitForm}>
         <div className="form-group">
-          <label for="exampleInputEmail1">Email address</label>
+          <label htmlFor="exampleInputEmail1">Email address</label>
           <input
             type="email"
             className="form-control"
@@ -42,7 +41,7 @@ const Register = () => {
           </small>
         </div>
         <div className="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label htmlFor="exampleInputPassword1">Password</label>
           <input
             type="password"
             className="form-control"
@@ -53,7 +52,7 @@ const Register = () => {
         </div>
 
         <button type="submit" className="btn btn-primary">
-          Submit
+          Sign Up
         </button>
       </form>
     </div>

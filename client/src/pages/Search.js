@@ -44,19 +44,9 @@ const Search = () => {
   return (
     <div className="container mt-5">
       <h1>Buy</h1>
-      {/* <form className="text-center mt-5"> */}
       <div className="form-row">
         <div className="col-6 col-md-3 col-xl-2">
           <label htmlFor="location">Location</label>
-          {/* <input
-            id="location"
-            name="location"
-            type="text"
-            className="form-control"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            placeholder="Enter location"
-          ></input> */}
           <AutoComplete
             value={location}
             setLocation={setLocation}

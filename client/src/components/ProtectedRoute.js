@@ -21,10 +21,10 @@ export default function ProtectedRoute({
           return (
             <Redirect
               to={{
-                pathname: "/",
+                pathname: "/login",
                 state: {
                   from: props.location,
-                  to: "/login",
+                  //to: "/login",
                 },
               }}
             />

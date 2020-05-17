@@ -157,7 +157,7 @@ const Sell = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="image">Image</label>
+              <label htmlFor="image">Image (URL)</label>
               <input
                 type="url"
                 className="form-control"
@@ -169,7 +169,7 @@ const Sell = () => {
               />
             </div>
             <button type="submit" className="btn btn-primary">
-              submit
+              Submit
             </button>
           </form>
         </div>
